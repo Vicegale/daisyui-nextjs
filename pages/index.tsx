@@ -1,5 +1,5 @@
-import NavBar from '/components/navbar/NavBar';
-import Incrementer from '/components/incrementer/Incrementer';
+import NavBar from '../components/navbar/NavBar';
+import Incrementer from '../components/incrementer/Incrementer';
 import Logger from '../components/logger/Logger';
 const Home = () => {
   return (
