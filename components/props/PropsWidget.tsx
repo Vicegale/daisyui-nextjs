@@ -1,7 +1,7 @@
-type Color = 'primary' | 'secondary' | 'accent';
+type Color = 'bg-primary' | 'bg-secondary' | 'bg-accent';
 
 const PropsWidget = (props: { color: Color }) => {
-  const className = 'bg-' + props.color;
+  const className = props.color;
   return (
     <div className={className + ' rounded-md text-black'}>{props.color}</div>
   );
