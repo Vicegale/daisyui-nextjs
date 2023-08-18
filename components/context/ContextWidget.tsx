@@ -8,7 +8,7 @@ const ContextWidget = () => {
       <div>
         <ColorContext.Provider value={word}>
           <Child/>
-        </ColorContext>
+        </ColorContext.Provider>
       </div>
     </>
   );
@@ -17,9 +17,9 @@ const ContextWidget = () => {
 const Child = () => {
   const ctx = useContext(ColorContext);
   return (
-    <div>
-      <p>{ctx}</p>
-      </div>
+    <div className="w-96 m-4 p-2 border-2 border-primary rounded-lg">
+      <p>Context says: {ctx}</p>
+    </div>
   )
 }
 export default ContextWidget;
