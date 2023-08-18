@@ -1,13 +1,13 @@
-import { useState, createContext, useContext  } from 'react';
+import { useState, useContext } from 'react';
+import ColorContext from './ColorContext';
 
-const ColorContext = createContext(null);
 const ContextWidget = () => {
-  const [word, setWord] = useState('wild');
+  const [color, setColor] = useState('green');
   return (
     <>
       <div>
-        <ColorContext.Provider value={word}>
-          <Child/>
+        <ColorContext.Provider value={color}>
+          <Child />
         </ColorContext.Provider>
       </div>
     </>
@@ -20,6 +20,6 @@ const Child = () => {
     <div className="w-96 m-4 p-2 border-2 border-primary rounded-lg">
       <p>Context says: {ctx}</p>
     </div>
-  )
-}
+  );
+};
 export default ContextWidget;
