@@ -14,7 +14,7 @@ const TaskList = () => {
             setTasks(tasks.map((t: Task) => { 
                 return {id: t.id, progress: (t.progress < 100) ? t.progress + 1 : t.progress}
             }));        
-        }, 100);
+        }, 50);
         return () => clearInterval(intervalId);
     })
 
@@ -23,8 +23,8 @@ const TaskList = () => {
     }
 
     return (
-        <div>
-            <button onClick={addTask}>Add Task</button>
+        <div className="w-96 m-4 p-2 border-solid border-2 border-primary rounded-lg">
+            <button className="btn btn-primary" onClick={addTask}>Add Task</button>
             <ul>
                 {tasks.map((task: Task) => (
                     <li key={task.id}>
