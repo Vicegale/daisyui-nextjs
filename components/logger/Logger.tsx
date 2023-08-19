@@ -121,7 +121,7 @@ const Logger = () => {
             Add
           </button>
           <button className="w-1/2 btn btn-primary" onClick={resetLog}>
-            Reset
+            Clear
           </button>
         </div>
         <div className="flex flex-col space-y-1 mt-1">
