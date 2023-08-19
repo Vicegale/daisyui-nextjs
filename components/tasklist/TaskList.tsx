@@ -25,7 +25,7 @@ const TaskList = () => {
     const removeCompleted = () => {
         setTasks(tasks.filter((t) => {
             return t.progress !== 100;
-        });
+        }));
     }
 
     return (
