@@ -4,6 +4,7 @@ import Logger from '../components/logger/Logger';
 import ContextWidget from '../components/context/ContextWidget';
 import PropsWidget from '../components/props/PropsWidget';
 import TaskList from '../components/tasklist/TaskList';
+import CharacterPicker from '../components/characters/CharacterPicker';
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
           <PropsWidget color="bg-accent" />
         </div>
         <TaskList />
+        <CharacterPicker />
       </div>
     </div>
   );
