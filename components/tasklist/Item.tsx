@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const Item = (props: { task: Task }) => {
   const max = 100;
   const className =
-    props.task.progress < max ? 'progress-primary' : 'progress-secondary';
+    props.task.progress < max ? 'progress-primary' : 'progress-success';
   return (
     <div className="flex flex-row items-center space-x-3">
       <p className="w-8 text-center">{props.task.id}</p>
