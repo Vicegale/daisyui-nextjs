@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Character } from '/common/types/character';
+import type Character from 'common/types/character';
 import CharacterBadge from './CharacterBadge';
 
 const CharacterPicker = () => {

@@ -1,4 +1,4 @@
-import { Character } from '/common/types/character';
+import Character from 'common/types/character';
 
 const CharacterDetails = (props: { character: Character }) => {
   const char = props.character;
