@@ -3,6 +3,7 @@ import Incrementer from '../components/incrementer/Incrementer';
 import Logger from '../components/logger/Logger';
 import ContextWidget from '../components/context/ContextWidget';
 import PropsWidget from '../components/props/PropsWidget';
+import TaskList from '../components/tasklist/TaskList';
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
           <PropsWidget color="bg-secondary" />
           <PropsWidget color="bg-accent" />
         </div>
+        <TaskList />
       </div>
     </div>
   );
