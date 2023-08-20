@@ -22,9 +22,16 @@ const TaskList = () => {
         setTasks([...tasks, {id: tasks.length + 1, progress: 0}]);
     }
 
+    const removeCompleted = () => {
+        setTasks(tasks.filter((t) => {
+            return t.progress !== 100;
+        }));
+    }
+
     return (
         <div className="w-96 m-4 p-2 border-solid border-2 border-primary rounded-lg">
             <button className="btn btn-primary" onClick={addTask}>Add Task</button>
+            <button className="btn btn-primary" onClick={removeCompleted}>Remove Done</button>
             <ul>
                 {tasks.map((task: Task) => (
                     <li key={task.id}>
