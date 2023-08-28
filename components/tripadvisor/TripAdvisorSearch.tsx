@@ -36,7 +36,7 @@ const TripAdvisorSearch = () => {
       <div>
         {locations.map((x) => (
           <div className="rounded-md text-center hover:bg-secondary active:bg-accent">
-            <p>{x}</p>
+            <p>{x.name}</p>
           </div>
         ))}
       </div>
