@@ -1,25 +1,29 @@
 import { ReactNode, useEffect, useState } from 'react';
 
+const controller = new AbortController();
+const signal = controller.signal;
+
 async function typeAhead(s: string): Promise<string[]> {
-  return fetch('/api/ta_search/' + s).then(async (res) => {
+  controller.abort();
+  return fetch('/api/ta_search/' + s, { signal: signal }).then(async (res) => {
     const locations = await res.json();
-    return locations.data
-      .filter((c) => c.name.toLowerCase().includes(s.toLowerCase()))
-      .map((loc) => loc.name);
+    return locations.data.filter((c) =>
+      c.name.toLowerCase().includes(s.toLowerCase())
+    );
   });
 }
 
 const TripAdvisorSearch = () => {
   const [input, setInput] = useState('');
-  const [chars, setChars] = useState([]);
+  const [locations, setLocations] = useState([]);
 
   useEffect(() => {
     if (input.length >= 3) {
       typeAhead(input).then((c: string[]) => {
-        setChars(c);
+        setLocations(c);
       });
     } else {
-      setChars([]);
+      setLocations([]);
     }
   }, [input]);
 
@@ -31,7 +35,7 @@ const TripAdvisorSearch = () => {
         onChange={(e) => setInput(e.target.value)}
       />
       <div>
-        {chars.map((x) => (
+        {locations.map((x) => (
           <div className="rounded-md text-center hover:bg-secondary active:bg-accent">
             <p>{x}</p>
           </div>
