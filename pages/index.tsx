@@ -6,6 +6,7 @@ import PropsWidget from '../components/props/PropsWidget';
 import TaskList from '../components/tasklist/TaskList';
 import CharacterPicker from '../components/characters/CharacterPicker';
 import TypeAheadSearch from 'components/typeahead/TypeAheadSearch';
+import TypeAheadQuery from 'components/typeahead/TypeAheadQuery';
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
           <PropsWidget color="bg-accent" />
         </div>
         <TaskList />
+        <TypeAheadQuery />
         <CharacterPicker />
       </div>
     </div>
