@@ -9,7 +9,7 @@ export default async function handler(
     'https://api.content.tripadvisor.com/api/v1/location/search?key=' +
     process.env.TRIPADVISOR_KEY;
   const urlParams =
-    '&searchQuery=' + request.query + '&category=restaurants&language=en';
+    '&searchQuery=' + request.query.input + '&category=restaurants&language=en';
 
   console.log(urlParams);
   const url = urlBase + urlParams;
