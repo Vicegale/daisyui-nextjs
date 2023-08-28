@@ -12,7 +12,7 @@ export default async function handler(
 
   try {
     const res = await fetch(url);
-    response.status(200).json(res);
+    response.status(200).json(url);
   } catch (err) {
     response.status(500).json(err);
   }
