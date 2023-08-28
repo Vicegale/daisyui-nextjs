@@ -4,7 +4,9 @@ import { ReactNode, useEffect, useState } from 'react';
 async function typeAhead(s: string): Promise<string[]> {
   return fetch('/api/characters').then(async (res) => {
     const chars: Character[] = await res.json();
-    return chars.map((c) => c.name).filter((c) => c.includes(s));
+    return chars
+      .map((c) => c.name.toLowerCase())
+      .filter((c) => c.includes(s.toLowerCase()));
   });
 }
 

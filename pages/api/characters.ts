@@ -102,6 +102,56 @@ const chars: Character[] = [
       damage: 115,
     },
   },
+  {
+    id: 11,
+    name: 'Eldrik',
+    level: 39,
+    class: 'Warrior',
+    weapon: {
+      name: 'Blade of Inferno',
+      damage: 125,
+    },
+  },
+  {
+    id: 12,
+    name: 'Lianna',
+    level: 40,
+    class: 'Archer',
+    weapon: {
+      name: 'Longbow of Stars',
+      damage: 115,
+    },
+  },
+  {
+    id: 13,
+    name: 'Grommush',
+    level: 53,
+    class: 'Barbarian',
+    weapon: {
+      name: 'Maul of Thundering',
+      damage: 155,
+    },
+  },
+  {
+    id: 14,
+    name: 'Faela',
+    level: 31,
+    class: 'Mage',
+    weapon: {
+      name: 'Crystal Staff',
+      damage: 85,
+    },
+  },
+  {
+    id: 15,
+    name: 'Alden',
+    level: 36,
+    class: 'Paladin',
+    weapon: {
+      name: 'Divine Hammer',
+      damage: 135,
+    },
+  },
 ];
 
 export default function characters(
