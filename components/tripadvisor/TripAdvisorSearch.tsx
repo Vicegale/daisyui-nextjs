@@ -1,10 +1,9 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 const controller = new AbortController();
 const signal = controller.signal;
 
-async function typeAhead(s: string): Promise<string[]> {
-  controller.abort();
+async function typeAhead(s: string, signal: AbortSignal): Promise<string[]> {
   return fetch('/api/ta_search/' + s, { signal: signal }).then(async (res) => {
     const locations = await res.json();
     return locations.data.filter((c) =>
@@ -16,10 +15,13 @@ async function typeAhead(s: string): Promise<string[]> {
 const TripAdvisorSearch = () => {
   const [input, setInput] = useState('');
   const [locations, setLocations] = useState([]);
+  const abortController = useRef(new AbortController());
 
   useEffect(() => {
     if (input.length >= 3) {
-      typeAhead(input).then((c: string[]) => {
+      abortController.current.abort();
+      abortController.current = new AbortController();
+      typeAhead(input, abortController.current.signal).then((c: string[]) => {
         setLocations(c);
       });
     } else {
