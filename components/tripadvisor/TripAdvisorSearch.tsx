@@ -1,8 +1,5 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
-const controller = new AbortController();
-const signal = controller.signal;
-
 async function typeAhead(s: string, signal: AbortSignal): Promise<string[]> {
   return fetch('/api/ta_search/' + s, { signal: signal }).then(async (res) => {
     const locations = await res.json();
