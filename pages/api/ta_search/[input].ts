@@ -12,8 +12,7 @@ export default async function handler(
 
   try {
     const res = await fetch(url);
-    const t = await res.text();
-    console.log(t);
+    console.log('hello world!');
     response.status(200).json(res.json());
   } catch (err) {
     response.status(500).json(err);
