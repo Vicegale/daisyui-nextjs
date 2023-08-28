@@ -3,12 +3,9 @@ import { ReactNode, useEffect, useState } from 'react';
 async function typeAhead(s: string): Promise<string[]> {
   return fetch('/api/ta_search/' + s).then(async (res) => {
     const locations = await res.json();
-    return locations.filter((c) =>
-      c.name
-        .toLowerCase()
-        .includes(s.toLowerCase())
-        .map((loc) => loc.name)
-    );
+    return locations.data
+      .filter((c) => c.name.toLowerCase().includes(s.toLowerCase()))
+      .map((loc) => loc.name);
   });
 }
 
