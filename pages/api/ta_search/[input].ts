@@ -5,13 +5,14 @@ export default async function handler(
   request: NextApiRequest,
   response: NextApiResponse
 ) {
-  const url =
+  const urlBase =
     'https://api.content.tripadvisor.com/api/v1/location/search?key=' +
-    process.env.TRIPADVISOR_KEY +
-    '&searchQuery=' +
-    request.query +
-    '&category=restaurants&language=en';
+    process.env.TRIPADVISOR_KEY;
+  const urlParams =
+    '&searchQuery=' + request.query + '&category=restaurants&language=en';
 
+  console.log(urlParams);
+  const url = urlBase + urlParams;
   try {
     const res = await fetch(url);
     response.status(200).json(await res.json());
