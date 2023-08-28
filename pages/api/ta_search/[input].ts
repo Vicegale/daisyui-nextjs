@@ -8,7 +8,9 @@ export default async function handler(
   const url =
     'https://api.content.tripadvisor.com/api/v1/location/search?key=' +
     process.env.TRIPADVISOR_KEY +
-    '&searchQuery=taberna%20modesto&category=restaurants&language=en';
+    '&searchQuery=' +
+    request.query +
+    '&category=restaurants&language=en';
 
   try {
     const res = await fetch(url);
