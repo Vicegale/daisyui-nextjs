@@ -1,12 +1,14 @@
-import Character from 'common/types/character';
 import { ReactNode, useEffect, useState } from 'react';
 
 async function typeAhead(s: string): Promise<string[]> {
-  return fetch('/api/characters').then(async (res) => {
-    const chars: Character[] = await res.json();
-    return chars
-      .map((c) => c.name.toLowerCase())
-      .filter((c) => c.includes(s.toLowerCase()));
+  return fetch('/api/ta_search/' + s).then(async (res) => {
+    const locations = await res.json();
+    return locations.filter((c) =>
+      c.name
+        .toLowerCase()
+        .includes(s.toLowerCase())
+        .map((loc) => loc.name)
+    );
   });
 }
 
