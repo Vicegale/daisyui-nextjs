@@ -5,6 +5,7 @@ import ContextWidget from '../components/context/ContextWidget';
 import PropsWidget from '../components/props/PropsWidget';
 import TaskList from '../components/tasklist/TaskList';
 import CharacterPicker from '../components/characters/CharacterPicker';
+import TypeAheadSearch from 'components/typeahead/TypeAheadSearch';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <div>
         <Incrementer />
         <Logger />
+        <TypeAheadSearch />
         <ContextWidget />
         <div className="flex flex-col space-y-1 mt-1 w-96 m-4 p-2 border-solid border-2 border-primary rounded-md">
           <PropsWidget color="bg-primary" />
