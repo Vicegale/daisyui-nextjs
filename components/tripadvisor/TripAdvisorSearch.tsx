@@ -36,15 +36,17 @@ const TripAdvisorSearch = () => {
             />
             <div>
                 {locations.map((x) => (
-                    <a href={"https://tripadvisor.com/"+x.location_id} className="border-solid border-2 rounded-md hover:bg-secondary active:bg-accent">
-                        <div className='flex flex-col'>
-                            <div className='flex flex-row justify-between'>
-                                <p className='font-bold ml-4'>{x.name}</p>
-                                <p className='text-slate-400 text-xs'>{x.location_id}</p>
+                    <div className="border-solid border-2 rounded-md hover:bg-secondary active:bg-accent">
+                        <a href={"https://tripadvisor.com/" + x.location_id}> 
+                            <div className='flex flex-col'>
+                                <div className='flex flex-row justify-between'>
+                                    <p className='font-bold ml-4'>{x.name}</p>
+                                    <p className='text-slate-400 text-xs'>{x.location_id}</p>
+                                </div>
+                                <p className='ml-4'>{x.address_obj.city}, {x.address_obj.country}</p>
                             </div>
-                            <p className='ml-4'>{x.address_obj.city}, {x.address_obj.country}</p>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 ))}
             </div>
         </div>
