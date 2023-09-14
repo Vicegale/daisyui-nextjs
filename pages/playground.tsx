@@ -1,6 +1,7 @@
 import Buttons from 'components/playground/Buttons';
 import NavBar from '../components/navbar/NavBar';
 import Sidebar from 'components/playground/Sidebar';
+import Prompt from 'components/playground/Prompt';
 
 const Playground = () => {
   return (
@@ -10,6 +11,7 @@ const Playground = () => {
         <Sidebar />
         <Buttons />
       </div>
+      <Prompt />
     </div>
   );
 };
